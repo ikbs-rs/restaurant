@@ -400,7 +400,7 @@ body {
     line-height: 0;
     transition: 0.5s;
   }
-  
+
   @media (max-width: 991px) {
     .mobile-nav-toggle {
       display: block;
@@ -416,7 +416,7 @@ body {
     overflow: hidden;
     top: 0;
     right: 0;
-    left: 0;
+    left: max(30%, calc(30% - 150px));
     bottom: 0;
     background: rgba(0, 0, 0, 0.9);
     transition: 0.3s;
@@ -475,6 +475,7 @@ body {
   
   .navbar-mobile .dropdown ul li {
     min-width: 200px;
+    visibility: visible;
   }
   
   .navbar-mobile .dropdown ul a {

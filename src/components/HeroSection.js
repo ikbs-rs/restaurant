@@ -12,6 +12,19 @@ const HeroSection = ({scrollToSection, menuRef, orderedRef}) => {
     // Implementacija navigacije do sekcije za rezervaciju
   };
 
+  const openPopup = (url, width, height) => {
+    // Izračunajte položaj središta ekrana
+    console.log("Otvaram prozor 01")
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const left = (windowWidth - width) / 2;
+    const top = (windowHeight - height) / 2;
+    
+    // Otvorite novi prozor sa određenim dimenzijama i položajem
+    window.open(url, '_blank', 'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top);
+  };
+   
+
   return (
     <section id="hero" className="d-flex align-items-center">
       <div className="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
@@ -26,8 +39,7 @@ const HeroSection = ({scrollToSection, menuRef, orderedRef}) => {
             </div>
           </div>
           <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-            {/* Za integraciju sa lightbox-om ili sličnim, možda će biti potrebno dodatno konfigurisanje */}
-            <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" className="glightbox play-btn"></a>
+            <a onClick={() => openPopup('https://www.youtube.com/watch?v=u6BOC7CDUTQ', 800, 600)} className="glightbox play-btn"></a>
           </div>
         </div>
       </div>
