@@ -2,7 +2,7 @@
 import React from 'react';
 import './Index.css'; // Pretpostavimo da imate CSS fajl za stilizovanje
 
-const HeroSection = ({scrollToSection, menuRef}) => {
+const HeroSection = ({scrollToSection, menuRef, orderedRef}) => {
   // Funkcija za upravljanje klikom na dugme, ako je potrebno
   const handleMenuClick = () => {
     // Implementacija navigacije do sekcije menija
@@ -22,7 +22,7 @@ const HeroSection = ({scrollToSection, menuRef}) => {
 
             <div className="btns">
               <button onClick={(e) => {e.preventDefault(); scrollToSection(menuRef);}} className="btn-menu animated fadeInUp scrollto">Our Menu</button>
-              <button onClick={handleBookTableClick} className="btn-book animated fadeInUp scrollto">Book a Table</button>
+              <button onClick={(e) => {e.preventDefault(); scrollToSection(orderedRef);}} className="btn-book animated fadeInUp scrollto">Book a Table</button>
             </div>
           </div>
           <div className="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">

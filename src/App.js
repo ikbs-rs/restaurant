@@ -6,11 +6,13 @@ import About from './components/About';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import TopBar from './components/TopBar';
+import Ordered from './components/Ordered';
 
 function App() {
   const heroSectionRef = useRef(null);
   const aboutRef = useRef(null);
   const menuRef = useRef(null);
+  const orderedRef = useRef(null);
 
   useEffect(() => {
     // Postavljanje atributa na <body> tag
@@ -33,10 +35,11 @@ function App() {
     <Router>
       <div className="App">
         <TopBar />
-        <Header scrollToSection={scrollToSection} heroSectionRef={heroSectionRef} aboutRef={aboutRef} menuRef={menuRef} />
-        <div ref={heroSectionRef}><HeroSection scrollToSection={scrollToSection} menuRef={menuRef} /></div>
+        <Header scrollToSection={scrollToSection} heroSectionRef={heroSectionRef} aboutRef={aboutRef} menuRef={menuRef} orderedRef={orderedRef} />
+        <div ref={heroSectionRef}><HeroSection scrollToSection={scrollToSection} menuRef={menuRef} orderedRef={orderedRef}/></div>
         <div ref={aboutRef}><About /></div>
         <div ref={menuRef}><Menu /></div>
+        <div ref={orderedRef}><Ordered /></div>
         <Footer />
       </div>
     </Router>

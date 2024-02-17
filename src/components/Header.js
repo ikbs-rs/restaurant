@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Index.css';
 
-const Header = ({ scrollToSection, heroSectionRef, aboutRef, menuRef }) => {
+const Header = ({ scrollToSection, heroSectionRef, aboutRef, menuRef, orderedRef }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -53,6 +53,13 @@ const Header = ({ scrollToSection, heroSectionRef, aboutRef, menuRef }) => {
                 toggleMobileMenu();
               }
             }}>Menu</a></li>
+            <li><a href="/ordered" onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(orderedRef);
+              if (mobileMenuOpen) {
+                toggleMobileMenu();
+              }
+            }}>Ordered</a></li>            
           </ul>
           <i className={`bi mobile-nav-toggle ${mobileMenuOpen ? 'bi-x' : 'bi-list'}`} onClick={toggleMobileMenu}></i>
         </nav>
